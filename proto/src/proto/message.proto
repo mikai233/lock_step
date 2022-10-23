@@ -1,0 +1,108 @@
+syntax = "proto3";
+package com.mikai233.lockstep.proto;
+
+message LoginReq{
+  uint32 player_id = 1;
+}
+
+message LoginResp{
+
+}
+
+message CreateRoomReq{
+
+}
+
+message CreateRoomResp{
+  uint32 room_id = 1;
+  int32 sead = 2;
+}
+
+message JoinRoomReq{
+  uint32 room_id = 1;
+}
+
+message JoinRoomResp{
+  uint32 room_id = 1;
+  uint32 seat_id = 2;
+  int32 sead = 3;
+}
+
+message LoadingProgressUpdateReq{
+  uint32 seat_id = 1;
+  uint32 progress = 2;
+}
+
+message LoadingProgressUpdateResp{
+
+}
+
+message SCLoadingProgressUpdate{
+  uint32 seat_id = 1;
+  uint32 progress = 2;
+}
+
+message StartGameReq{
+
+}
+
+message StartGameResp{
+
+}
+
+message StopGameReq{
+
+}
+
+message StopGameResp{
+
+}
+
+message SCStopGame{
+
+}
+
+message PingReq{
+
+}
+
+message PingResp{
+
+}
+
+message ReconnectReq{
+  uint32 player_id = 1;
+  uint32 room_id = 2;
+}
+
+message ReconnectResp{
+  repeated Frame frames = 1;
+}
+
+message SCStartGame{
+
+}
+
+message FrameReq{
+  Frame frame = 1;
+}
+
+message Input{
+  uint32 id = 1;
+  uint32 seat_id = 2;
+  int32 x = 3;
+  int32 y = 4;
+}
+
+message Frame{
+  uint32 frame_id = 1;
+  repeated Input inputs = 2;
+}
+
+message SCFrame{
+  Frame frame = 1;
+}
+
+message SCBlock{
+  string message = 1;
+}

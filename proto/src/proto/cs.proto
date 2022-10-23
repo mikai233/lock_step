@@ -1,0 +1,17 @@
+syntax = "proto3";
+package com.mikai233.lockstep.proto;
+
+import "message.proto";
+
+enum MsgCS{
+  UnusedCS = 0;
+  LoginReqE = 1;
+  CreateRoomReqE = 2;
+  JoinRoomReqE = 3;
+  LoadingProgressUpdateReqE = 4;
+  StartGameReqE = 5;
+  FrameReqE = 6;
+  PingReqE = 7;
+  ReconnectReqE = 8;
+  StopGameReqE = 9;
+}
